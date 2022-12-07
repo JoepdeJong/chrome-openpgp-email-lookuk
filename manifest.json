@@ -1,0 +1,33 @@
+{
+    "name": "OpenPGP Email Lookup",
+    "description": "Check if there is a PGP key in the OpenPGP keyserver associated with the mailto: links on the current page. The lookup is done on click of the extension icon or by pressing Ctrl+Shift+Z (Command+Shift+Z on Mac).",
+    "version": "0.0.9",
+    "manifest_version": 3,
+    "author": "Joep de Jong",
+    "action": {
+      "default_title": "Retrieve PGP keys"
+    },
+    "icons": {
+      "64": "img/icon-64.png"
+    },
+    "incognito": "split",
+    "permissions": [
+        "activeTab", 
+        "scripting",
+        "notifications",
+        "nativeMessaging"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+            "windows": "Ctrl+Shift+Z",
+            "mac": "Command+Shift+Z",
+            "chromeos": "Ctrl+Shift+Z",
+            "linux": "Ctrl+Shift+Z"
+            }
+        }
+    }
+  }
